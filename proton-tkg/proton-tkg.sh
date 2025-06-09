@@ -1362,7 +1362,7 @@ else
         echo ""
         echo "####################################################################################################"
         if [ -e "$_nowhere"/tarplz ];then
-          ( cd "$_nowhere"/built && tar -cvf "proton_tkg_$_protontkg_version".tar "proton_tkg_$_protontkg_version" && rm -rf "proton_tkg_$_protontkg_version" )
+          ( cd "$_nowhere"/built && tar -I 'zstd -19 -T0 --ultra' -cvf proton.tar.zst "proton_tkg_$_protontkg_version" && rm -rf "proton_tkg_$_protontkg_version" )
         fi
       fi
     else
