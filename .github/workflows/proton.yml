@@ -10,11 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: archlinux:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.github_token }}
+    container: archlinux:latest
 
     steps:
       - name: Checkout Repository
