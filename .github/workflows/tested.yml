@@ -30,6 +30,7 @@ jobs:
         run: |
           chown -R user:user $PWD
           export CARGO_HOME="$PWD"
+          mkdir -p proton-tkg/built
           touch proton-tkg/built/tested.tar
 
       - name: Archive Build Artifacts
