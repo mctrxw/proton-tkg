@@ -24,10 +24,14 @@ jobs:
           touch tarplz
           yes | ./non-makepkg-build.sh
 
+      - name: Rename to wine.tar
+        run: |
+          mv wine-tkg-git/non-makepkg-builds/*.tar wine.tar
+
       - name: Upload to GitHub Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: wine-tkg-git/non-makepkg-builds/*.tar
+          files: wine.tar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

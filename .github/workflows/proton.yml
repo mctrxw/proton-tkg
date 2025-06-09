@@ -42,10 +42,14 @@ jobs:
             yes | ./proton-tkg.sh
           "
 
+      - name: Rename to proton.tar
+        run: |
+          mv proton-tkg/built/*.tar proton.tar
+
       - name: Upload to GitHub Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: proton-tkg/built/*.tar
+          files: proton.tar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
