@@ -1,4 +1,4 @@
-name: Proton NTSYNC CI
+name: TEST
 
 on:
   workflow_dispatch:
