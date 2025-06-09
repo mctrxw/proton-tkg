@@ -31,7 +31,7 @@ jobs:
           chown -R user:user $PWD
           export CARGO_HOME="$PWD"
           mkdir -p proton-tkg/built
-          tar -cvf proton-tkg/proton-tkg.* proton-tkg/built/tested.tar
+          tar -cvf proton-tkg/built/tested.tar proton-tkg/
 
       - name: Archive Build Artifacts
         uses: actions/upload-artifact@v4
